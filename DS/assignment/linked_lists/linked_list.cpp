@@ -17,8 +17,8 @@ public:
 	int delete_beg();
 	int delete_end();
 	void delete_spec(int);
-	void travel_forward();
-	void travel_backward();
+	void forward_display();
+	void backward_display();
 	void reversal();
 	~list();
 	friend void display(struct node*);
@@ -180,7 +180,7 @@ void list::delete_spec(int ele)
 		}
 	}
 }
-void list::travel_forward()
+void list::forward_display()
 {
 	if (start == NULL)
 		cout << "Empty list" << endl;
@@ -195,7 +195,7 @@ void list::travel_forward()
 		}
 	}
 }
-void list::travel_backward()
+void list::backward_display()
 {
 	cout << "NULL";
 	if (start != NULL)
@@ -242,8 +242,8 @@ void main()
 	list l;
 	cout << "Enter your choice:" << endl;
 	cout << "1.Insert beginning 2.Insert end 3.Insert after 4.Insert before" << endl;
-	cout<<"5.Delete beginning 6.Delete End 7.Delete specific element 8.Travel forward" << endl;
-	cout << "9.Travel backward 10.Reverse 11.Print" << endl;
+	cout<<"5.Delete beginning 6.Delete End 7.Delete specific element 8.forward display" << endl;
+	cout << "9.backward display 10.Reversal" << endl;
 	cout << endl;
 	while (1)
 	{
@@ -311,12 +311,12 @@ void main()
 		}
 		case 8:
 		{
-			l.travel_forward();
+			l.forward_display();
 			break;
 		}
 		case 9:
 		{
-			l.travel_backward();
+			l.backward_display();
 			break;
 		}
 		case 10:
