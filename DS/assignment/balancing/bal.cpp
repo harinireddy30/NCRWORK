@@ -75,8 +75,10 @@ void main()
 	{
 		switch (s[i])
 		{
-		     case '{':
-		     case '[':
+		     case '{':s1.push(s[i]);
+				      break;
+		     case '[':s1.push(s[i]);
+				      break;
 		     case '(':s1.push(s[i]);
 			          break;
 			 case ')':
