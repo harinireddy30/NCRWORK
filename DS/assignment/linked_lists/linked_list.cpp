@@ -21,7 +21,6 @@ public:
 	void backward_display();
 	void reversal();
 	~list();
-	friend void display(struct node*);
 };
 list::list()
 {
@@ -270,7 +269,7 @@ void main()
 		case 3:
 		{
 			int a, ele;
-			cout << "Insert element to be inserted and after which element:";
+			cout << "Enter element to be inserted and after which element:";
 			cin >> ele;
 			cin >> a;
 			l.insert_after(ele, a);
