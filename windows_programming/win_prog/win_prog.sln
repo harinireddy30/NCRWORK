@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "com_line_args", "com_line_a
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "files", "files\files.vcxproj", "{99856465-544D-4E28-B980-431BF3E6AD56}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "processes_threads", "processes_threads\processes_threads.vcxproj", "{C943E699-BDF6-4C94-BF1A-5485F5F18EC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{99856465-544D-4E28-B980-431BF3E6AD56}.Release|x64.Build.0 = Release|x64
 		{99856465-544D-4E28-B980-431BF3E6AD56}.Release|x86.ActiveCfg = Release|Win32
 		{99856465-544D-4E28-B980-431BF3E6AD56}.Release|x86.Build.0 = Release|Win32
+		{C943E699-BDF6-4C94-BF1A-5485F5F18EC2}.Debug|x64.ActiveCfg = Debug|x64
+		{C943E699-BDF6-4C94-BF1A-5485F5F18EC2}.Debug|x64.Build.0 = Debug|x64
+		{C943E699-BDF6-4C94-BF1A-5485F5F18EC2}.Debug|x86.ActiveCfg = Debug|Win32
+		{C943E699-BDF6-4C94-BF1A-5485F5F18EC2}.Debug|x86.Build.0 = Debug|Win32
+		{C943E699-BDF6-4C94-BF1A-5485F5F18EC2}.Release|x64.ActiveCfg = Release|x64
+		{C943E699-BDF6-4C94-BF1A-5485F5F18EC2}.Release|x64.Build.0 = Release|x64
+		{C943E699-BDF6-4C94-BF1A-5485F5F18EC2}.Release|x86.ActiveCfg = Release|Win32
+		{C943E699-BDF6-4C94-BF1A-5485F5F18EC2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
