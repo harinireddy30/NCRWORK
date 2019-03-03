@@ -1,103 +1,76 @@
 #include<iostream>
 using namespace std;
-struct stack {
+class stack_parameters {
+	char *stack;                       //pointer to the stack
 	int top;                           //top of the stack
-	int n;                             //size of stack
-	char *ch;                          //pointer pointing to stack
-};
-class bal{
-	struct stack s1;                   //data member of type structure stack
 public:
-	bal()                              
+	void set(int x)
 	{
-		s1.top = -1;
-		s1.n = 0;
-		s1.ch = NULL;
+		stack = new char[x];      //allocating memory to the stack
+		top = -1;
 	}
-	void set_data(int x)                   //set data to structure 
+
+	void push(char ele)
 	{
-		s1.n = x;
-		s1.ch = new char[x];
+		stack[++top] = ele;
 	}
-	bool empty()                           //check if stack is empty 
+	void pop()
 	{
-		return (s1.top == -1);
+		top--;
 	}
-	bool full()                            //check if stack is full
+	char peek()
 	{
-		return (s1.top == (s1.n - 1));
+		return stack[top];                 //returns top element os the stack without popping
 	}
-	char peek()                        //return the value at top
+	int isempty()
 	{
-		if (!empty())
-			return (s1.ch[s1.top]);
-		else
-			return -1;
-	}
-	void push(int ele)
-	{
-		if (!full())
-			s1.ch[++s1.top] = ele;
-		else
-			cout << "Overflow" << endl;
-	}
-	char pop()
-	{
-		if (!empty())
-			return (s1.ch[s1.top--]);
-		else
-			return -1;
-	}
-	void display()
-	{
-		if (!empty())
-			for (int i = 0; i <= s1.top; i++)
-				cout << s1.ch[i] << " ";
-		else
-			cout << "Stack is empty" << endl;
-	}
-	~bal()
-	{
-		delete s1.ch;
+		return(top == -1);                 //returns 1 if stack is empty
 	}
 };
-void main()
+int main()
 {
-	char *s;
-	s = new char[10];
-	int i, x;
-	cout << "Enter the string" << endl;
+	stack_parameters s1;
+	s1.set(20);                              //size of stack
+	char s[50];                             //string declaration
+	int i, flag = 0;
+	cout << "enter expression for checking balanced paranthesis" << endl;
 	cin >> s;
-	int flag = 0;
-	bal s1;
-	s1.set_data(strlen(s));
-	for (int i = 0; i < strlen(s); i++)
+	for (i = 0; i < strlen(s); i++)               //checks each element of the string
 	{
 		switch (s[i])
 		{
-		     case '{':s1.push(s[i]);
-				      break;
-		     case '[':s1.push(s[i]);
-				      break;
-		     case '(':s1.push(s[i]);
-			          break;
-			 case ')':
-			 case ']':
-			 case '}':
-			 {
-				 if (!s1.empty())
-				 {
-					 if ((s[i] == ']'&&s1.peek() == '[') || (s[i] == '}'&&s1.peek() == '{') || (s[i] == ')'&&s1.peek() == '('))
-						 s1.pop();
-					 else
-						 flag = 1;
-				 }
-				 else
-					 flag = 1;
-				 break;
-			 }
+		case'[':
+		case'{':
+		case '(':
+		{
+			s1.push(s[i]);                       //'(' or '[' or'{' =>push on to the stack
+			break;
 		}
+		case'}':
+		case ']':
+		case ')':
+		{
+			if (!s1.isempty())                   //')' or']' or'}' =>check with the top element of the stack;if equal=>pop
+			{
+				if ((s[i] == '}'&&s1.peek() == '{') || (s[i] == ']'&&s1.peek() == '[') || (s[i] = ')'&&s1.peek() == '('))
+				{
+					s1.pop();
+					break;
+				}
+			}
+			else
+			{
+				flag = 1;                        //set flag to 1  if characters are not equal
+				break;
+			}
+		}
+		}		if (flag == 1)
+			break;
 	}
-	s1.display();
-	cin >> x;
+	if (s1.isempty() && flag == 0)
+		cout << "Balanced" << endl;
+	else
+		cout << "Unbalanced" << endl;
+	system("pause");
+	return 0;
 }
