@@ -45,7 +45,7 @@ public:
 			{
 				temp->coeff = t1->coeff + t2->coeff;
 				temp->exp = t1->exp;
-				cout << temp->coeff << " " << temp->exp<< endl;
+				cout <<"coefficient:"<< temp->coeff << " exponent:" << temp->exp<< endl;
 				if (start == NULL)
 					start = temp;
 				else
@@ -62,7 +62,7 @@ public:
 			{
 				temp->coeff = t1->coeff;
 				temp->exp = t1->exp;
-				cout << temp->coeff << " " << temp->exp << endl;
+				cout <<"coefficient:"<< temp->coeff << " exponent:" << temp->exp << endl;
 				if (start == NULL)
 					start = temp;
 				else
@@ -78,7 +78,7 @@ public:
 			{
 				temp->coeff = t2->coeff;
 				temp->exp = t2->exp;
-				cout << temp->coeff << " " << temp->exp << endl;
+				cout <<"coefficient:"<< temp->coeff << " exponent:" << temp->exp << endl;
 				if (start == NULL)
 					start = temp;
 				else
@@ -88,7 +88,7 @@ public:
 						p = p->next;
 					p->next = temp;
 				}
-				t1 = t1->next;
+				t2 = t2->next;
 			}
 		}
 		while (t1 != NULL)
@@ -102,7 +102,7 @@ public:
 			while (t->next != NULL)
 				t = t->next;
 			t->next = temp;
-			t2 = t2->next;
+			t1 = t1->next;
 		}
 		while (t2 != NULL)
 		{
@@ -123,13 +123,13 @@ public:
 	}
 	void display()
 	{
-		struct node *t = start;
-		while (t != NULL)
+		struct node *p = start;
+		while (p != NULL)
 		{
-			cout << t->coeff << "x^" << t->exp;
-			if (t->next != NULL)
+			cout << p->coeff << "x^" << p->exp;
+			if (p->next != NULL)
 				cout << "+";
-			t = t->next;
+			p = p->next;
 		}
 		cout << endl;
 	}
@@ -138,29 +138,32 @@ public:
 int main()
 {
 	poly p1, p2, p3;
-	cout << "Enter 1st ploynomial:\n";
-	int c, e;
-	char ch;
+	cout << "Enter the 1st ploynomial:\n";
+	int coeff, exp;
+	int cont;
 	do
 	{
-		cout << "Coeff & power:";
-		cin >> c >> e;
-		p1.add_ele(c, e);
-		cout << "continue(y/n)?";
-		cin >> ch;
-	} while (ch == 'y');
-	cout << "Enter 2nd ploynomial:\n";
+		cout << "Enter coefficient & power:";
+		cin >> coeff >> exp;
+		p1.add_ele(coeff, exp);
+		cout << "Add more elements to the polynomial? Enter 1 if yes;else enter 0\n";
+		cin >> cont;
+	} while (cont == 1);
+	cout << "Enter the 2nd ploynomial:\n";
 	do
 	{
-		cout << "Coeff & power:";
-		cin >> c >> e;
-		p2.add_ele(c, e);
-		cout << "continue(y/n)?";
-		cin >> ch;
-	} while (ch == 'y');
+		cout << "Enter coefficient & power:";
+		cin >> coeff >> exp;
+		p2.add_ele(coeff, exp);
+		cout << "Add more elements to the polynomial? Enter 1 if yes;else enter 0\n";
+		cin >> cont;
+	} while (cont == 1);
+	cout << "The first polynomial is:<<";
 	p1.display();
+	cout<<endl<<"The second polynomial is:";
 	p2.display();
 	p3.add_poly(p1, p2);
+	cout<<endl<<"The resultant polynomial is:";
 	p3.display();
 	system("pause");
 	return 0;
