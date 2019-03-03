@@ -33,35 +33,35 @@ public:
 	}
 	poly add_poly(poly p1, poly p2)
 	{
-		struct node *t1, *t2;
-		t1 = p1.start;
-		t2 = p2.start;
-		while (t1 != NULL && t2 != NULL)
+		struct node *n1, *n2;
+		n1 = p1.start;
+		n2 = p2.start;
+		while (n1 != NULL && n2 != NULL)
 		{
 			struct node *temp;
 			temp = new node;
 			temp->next = NULL;
-			if (t1->exp == t2->exp)
+			if (n1->exp == n2->exp)
 			{
-				temp->coeff = t1->coeff + t2->coeff;
-				temp->exp = t1->exp;
+				temp->coeff = n1->coeff +n2->coeff;
+				temp->exp = n1->exp;
 				cout <<"coefficient:"<< temp->coeff << " exponent:" << temp->exp<< endl;
 				if (start == NULL)
 					start = temp;
 				else
 				{
-					struct node *t = start;
-					while (t->next != NULL)
-						t = t->next;
-					t->next = temp;
+					struct node *p = start;
+					while (p->next != NULL)
+						p = p->next;
+					p->next = temp;
 				}
-				t1 = t1->next;
-				t2 = t2->next;
+				n1 = n1->next;
+				n2 = n2->next;
 			}
-			else if (t1->exp > t2->exp)
+			else if (n1->exp > n2->exp)
 			{
-				temp->coeff = t1->coeff;
-				temp->exp = t1->exp;
+				temp->coeff = n1->coeff;
+				temp->exp = n1->exp;
 				cout <<"coefficient:"<< temp->coeff << " exponent:" << temp->exp << endl;
 				if (start == NULL)
 					start = temp;
@@ -72,12 +72,12 @@ public:
 						p = p->next;
 					p->next = temp;
 				}
-				t1 = t1->next;
+				n1 = n1->next;
 			}
 			else
 			{
-				temp->coeff = t2->coeff;
-				temp->exp = t2->exp;
+				temp->coeff = n2->coeff;
+				temp->exp = n2->exp;
 				cout <<"coefficient:"<< temp->coeff << " exponent:" << temp->exp << endl;
 				if (start == NULL)
 					start = temp;
@@ -88,34 +88,34 @@ public:
 						p = p->next;
 					p->next = temp;
 				}
-				t2 = t2->next;
+				n2 = n2->next;
 			}
 		}
-		while (t1 != NULL)
+		while (n1 != NULL)
 		{
 			struct node *temp;
 			temp = new node;
-			temp->coeff = t1->coeff;
-			temp->exp = t1->exp;
+			temp->coeff = n1->coeff;
+			temp->exp = n1->exp;
 			temp->next = NULL;
 			struct node *t = start;
 			while (t->next != NULL)
 				t = t->next;
 			t->next = temp;
-			t1 = t1->next;
+			n1 = n1->next;
 		}
-		while (t2 != NULL)
+		while (n2 != NULL)
 		{
 			struct node *temp;
 			temp = new node;
 			temp->next = NULL;
-			temp->coeff = t2->coeff;
-			temp->exp = t2->exp;
+			temp->coeff = n2->coeff;
+			temp->exp = n2->exp;
 			struct node *t = start;
 			while (t->next != NULL)
 				t = t->next;
 			t->next = temp;
-			t2 = t2->next;
+			n2 = n2->next;
 		}
 
 
@@ -126,7 +126,7 @@ public:
 		struct node *p = start;
 		while (p != NULL)
 		{
-			cout << p->coeff << "x^" << p->exp;
+			cout <<"("<< p->coeff << "x^" << p->exp<<")";
 			if (p->next != NULL)
 				cout << "+";
 			p = p->next;
