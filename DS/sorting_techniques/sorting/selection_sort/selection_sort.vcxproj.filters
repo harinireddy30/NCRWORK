@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ansi_fns.cpp">
+    <ClCompile Include="selection_sort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

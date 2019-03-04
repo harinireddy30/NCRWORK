@@ -1,10 +1,16 @@
 /*READING AND WRITING TO A FILE*/
+#define _CRT_SECURE_NO_WARNINGS
 #include<Windows.h>
 #include<iostream>
 #include<tchar.h>
 int _tmain(int argc, LPTSTR argv[])
 {
-	char ch[100];         //buffer to store elements after reading from a file
+	      
+	char *ch;                              
+	int n;
+	printf("Enter the size of buffer\n");
+	scanf("%d", &n);
+	ch = new char[n];                              //buffer to store elements after reading from a file
 	char ch1[] = "abcd";
 	HANDLE hfile;         //file handler
 	DWORD i, k;           //no of bytes read or written

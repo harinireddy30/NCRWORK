@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ansi_fns.cpp">
+    <ClCompile Include="create_event.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
