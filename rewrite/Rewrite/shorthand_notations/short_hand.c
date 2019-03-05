@@ -25,9 +25,9 @@ int expand(char s1[], char s2[])
 		{
 			int initial = s1[i - 1]+1;                      //prints from intial to final value when it encounters '-'
 			int final = s1[i + 1];
-			if (initial <= final)
+			if (initial <= final)                           //checks if leftside value of'-' is less than rightside value
 			{
-				while (initial != final)
+				while (initial != final)                    //copy until the final value is reached
 				{
 					s2[j] = initial;
 					initial++;
@@ -38,14 +38,14 @@ int expand(char s1[], char s2[])
 			}
 			else
 			{
-				printf("Enter a valid sequence\n");
+				printf("Enter a valid sequence\n");             //exception-ask for a valid input
 				break;
 			}
 		}
 		else
 		{
-			s2[j++] = s1[i++];
+			s2[j++] = s1[i++];                                  //store the value if '-' is not encountered
 		}
 	}
-	return (j-1);
+	return (j-1);                                              //return the size of storing array
 }
