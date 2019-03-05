@@ -4,7 +4,7 @@ int expand(char s1[], char s2[]);
 int main()
 {
 	int size;
-	char s1[20], s2[50];
+	char s1[20], s2[50];                                //string s1 for input expression and s2 for resultant expression
 	printf("Enter the string in s1:");
 	scanf("%[^\n]s", s1);                              //accepts characters until it encounters space
 	printf("The expression after expansion is:");
