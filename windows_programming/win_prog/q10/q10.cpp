@@ -1,19 +1,21 @@
 #include<Windows.h>
 #include<stdio.h>
 #include<stdlib.h>
+#include<iostream>
 #include<tchar.h>
 #define BUFFSIZE 100
 void _tmain(int argc, TCHAR *argv[], TCHAR *env[])
 {
+	std::cout << argc;                    //to know the no of arguments 
 	STARTUPINFO si1;
 	PROCESS_INFORMATION pi1;
-	ZeroMemory(&si1, sizeof(si1));
+	ZeroMemory(&si1, sizeof(si1));       
 	si1.cb = sizeof(si1);
 	ZeroMemory(&pi1, sizeof(pi1));
 	SECURITY_ATTRIBUTES sa;
-	sa.nLength = sizeof(sa);
+	sa.nLength = sizeof(sa);              //size of the structure
 	sa.lpSecurityDescriptor = NULL;
-	sa.bInheritHandle = TRUE;
+	sa.bInheritHandle = TRUE;            //new process inherits the handle
 	HANDLE hFile;
 	TCHAR buffer[BUFFSIZE];
 	hFile = CreateFile(argv[1], GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);

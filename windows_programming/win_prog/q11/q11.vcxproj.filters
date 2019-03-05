@@ -15,12 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="q10.cpp">
+    <ClCompile Include="q11.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="file2.txt">
+    <Text Include="file3.txt">
       <Filter>Source Files</Filter>
     </Text>
   </ItemGroup>

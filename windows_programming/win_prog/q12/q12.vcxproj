@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{08A378C2-2359-4839-A704-2B279DCB2D53}</ProjectGuid>
-    <RootNamespace>q10</RootNamespace>
+    <ProjectGuid>{3C58FB2C-6349-47E6-9316-13862EC4F225}</ProjectGuid>
+    <RootNamespace>q12</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -115,10 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="q10.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="file2.txt" />
+    <ClCompile Include="q12.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
