@@ -5,7 +5,7 @@
 #include<tchar.h>
 int main()
 {
-	HANDLE g_hEvent = CreateEvent(NULL, FALSE, FALSE, TEXT("namedevent"));
+	HANDLE g_hEvent = CreateEvent(NULL, FALSE, FALSE, TEXT("xyz"));
 	getchar();
 	return 1;
 }
