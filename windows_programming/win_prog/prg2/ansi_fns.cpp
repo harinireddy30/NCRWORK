@@ -5,8 +5,8 @@ int main()
 {
 	CHAR arr1[] = "harini";                        //ANSI ARRAY
 	WCHAR arr2[] = L"harini1234";                  //UNICODE ARRAY
-	PCHAR new_array;
-	PWCHAR new1_array;
+	PCHAR new_array;                               //pointer to character array
+	PWCHAR new1_array;                             //pointer to wide character array 
 	if (IsTextUnicode(arr1, strlen(arr1), NULL))   //checking if arr1 is unicode char array
 		printf("ARRAY arr1 is UNICODE \n");
 	else
@@ -19,7 +19,7 @@ int main()
 	/*MULTIBYTE TO WIDECHAR CONVERSION*/
 	int x=MultiByteToWideChar(CP_UTF8,0, arr1, -1,NULL, 0);        //returns size of arr1 
 	if (0 == x)
-		printf("System terminated with error (%d)\n",GetLastError());
+		printf("System terminated with error (%d)\n",GetLastError());    //if value of x is zero,displays error
 	else
 		printf("Size is %d\n", x);
 	new1_array = new WCHAR[x];                                    //allocating memory of x bytes of wchar type

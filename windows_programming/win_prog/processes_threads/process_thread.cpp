@@ -27,9 +27,9 @@ int _tmain(int argc, TCHAR *argv[])
 	CloseHandle(pi.hProcess);
 	CloseHandle(pi.hThread);
 
-	WaitForSingleObject(pi.hProcess, 5000);
-	ZeroMemory(&pi, sizeof(pi));
-	ZeroMemory(&pi1, sizeof(pi1));
+	WaitForSingleObject(pi.hProcess, 5000);                  //waits for child process1 to complete for 5 seconds.Terminate after 5 seconds if not signalled
+	ZeroMemory(&pi, sizeof(pi));                             //clearing the buffer
+	ZeroMemory(&pi1, sizeof(pi1));                          
 	if (!CreateProcess(NULL, argv[2], NULL, NULL, FALSE, 0, NULL, NULL, &si1, &pi))    //creation of child process
 	{
 		printf("CreateProcess failed (%d).\n", GetLastError());
@@ -39,7 +39,7 @@ int _tmain(int argc, TCHAR *argv[])
 	printf("Handle of process is %ld\n", (pi1.hProcess));     //handle ID
 	printf("Process ID: %ld\n", pi1.dwProcessId);             //process ID
 	printf("Thread ID:%ld\n", pi1.dwThreadId);                //thread ID
-	WaitForSingleObject(pi1.hProcess, INFINITE);
+	WaitForSingleObject(pi1.hProcess, INFINITE);              //waits for the process to terminate on its own
 		CloseHandle(pi1.hProcess);
 		CloseHandle(pi1.hThread);
 	system("pause");

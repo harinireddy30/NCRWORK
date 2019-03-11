@@ -42,14 +42,14 @@ int main()
 		case'[':
 		case'{':
 		case '(':
-		{
+		 {
 			s1.push(s[i]);                       //'(' or '[' or'{' =>push on to the stack
 			break;
-		}
+		 }
 		case'}':
 		case ']':
 		case ')':
-		{
+		 {
 			if (!s1.isempty())                   //')' or']' or'}' =>check with the top element of the stack;if equal=>pop
 			{
 				if ((s[i] == '}'&&s1.peek() == '{') || (s[i] == ']'&&s1.peek() == '[') || (s[i] = ')'&&s1.peek() == '('))
@@ -63,7 +63,7 @@ int main()
 				flag = 1;                        //set flag to 1  if characters are not equal
 				break;
 			}
-		}
+		 }
 		}		if (flag == 1)
 			break;
 	}

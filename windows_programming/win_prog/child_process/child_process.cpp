@@ -21,11 +21,11 @@ int _tmain(int argc, TCHAR *argv[])
 		return 1;
 	}
 	else
-	printf("Current process ID is: %ld", GetCurrentProcessId());
-	printf("\nCUrrent thread ID is: %ld", GetCurrentThreadId());
-	printf("\nProcess ID of pi is: %ld", GetProcessId(pi.hProcess));
-	printf("\nThread ID of pi is: %ld", GetThreadId(pi.hThread));
-	printf("\nProcess ID of thread is: %ld", GetProcessIdOfThread(pi.hThread));
+	printf("Current process ID is: %ld", GetCurrentProcessId());                      //prints the process ID of current process 
+	printf("\nCUrrent thread ID is: %ld", GetCurrentThreadId());                      //prints the thread ID of current thread
+	printf("\nProcess ID of pi is: %ld", GetProcessId(pi.hProcess));                  //prints the process ID of a particular process
+	printf("\nThread ID of pi is: %ld", GetThreadId(pi.hThread));                     //prints the thread ID of a particulat thread
+	printf("\nProcess ID of thread is: %ld", GetProcessIdOfThread(pi.hThread));       
 	CloseHandle(pi.hProcess);
 	CloseHandle(pi.hThread);
 	system("\npause");

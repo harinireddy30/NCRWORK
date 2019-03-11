@@ -24,11 +24,11 @@ public:
 	{
 		return (rear == size - 1);
 	}
-
+/*
 	bool underflow()
 	{
-		return (front != rear);
-	}
+		
+	}*/
 	void enqueue(int ele)
 	{
 		if (!overflow())

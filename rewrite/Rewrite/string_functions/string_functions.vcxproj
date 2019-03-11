@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{521EE9EF-1911-49A4-B2C6-11B2182E958C}</ProjectGuid>
-    <RootNamespace>calculator</RootNamespace>
+    <ProjectGuid>{6245C6B0-398C-4008-A2C6-736C76047E0E}</ProjectGuid>
+    <RootNamespace>stringfunctions</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -115,11 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="add.c" />
-    <ClCompile Include="calc.c" />
-    <ClCompile Include="divis.c" />
-    <ClCompile Include="mul.c" />
-    <ClCompile Include="sub.c" />
+    <ClCompile Include="string_func.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

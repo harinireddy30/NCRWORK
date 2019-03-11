@@ -1,97 +1,20 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #include<Windows.h>
 #include<tchar.h>
 #include<string.h>
-DWORD WINAPI thread_func(LPVOID lpParam);
+DWORD WINAPI thread_func(LPVOID lpParam)   //thread function definition
+{
+	for (int i = 0; i < 10; i++) {
+		_tprintf("Thread executing..\n");        //to display that the thread is executing
+	}
+	Sleep(1000);
+	_tprintf("Thread executed");
+	return 0;
+}
 int _tmain(int argc, TCHAR *argv[])
 {
-	printf("in child process");
+	printf("Currently in child process\n");
 	HANDLE h1 = GetCurrentProcess();
 	HANDLE hThread1;
 	DWORD dwThreadID;
@@ -116,11 +39,4 @@ int _tmain(int argc, TCHAR *argv[])
 	getchar();
 	return TRUE;
 }
-DWORD WINAPI thread_func(LPVOID lpParam) {
-	for (int i = 0; i < 10; i++) {
-		_tprintf("Thread executing..\n");
-	}
-	Sleep(1000);
-	_tprintf("Thread executed");
-	return 0;
-}
+DWORD WINAPI thread_func(LPVOID lpParam)

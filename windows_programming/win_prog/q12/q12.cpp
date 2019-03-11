@@ -13,8 +13,8 @@ int main()
 {
 	DWORD threadid;
 	HANDLE hthread;
-	hthread = CreateThread(NULL, 0, ThreadFunction, NULL, 0, &threadid);
-	if (hthread == NULL)
+	hthread = CreateThread(NULL, 0, ThreadFunction, NULL, 0, &threadid);    //creates a thread
+	if (hthread == NULL)     
 	{
 		printf("Thread not created.Error:(%d)\n", GetLastError());
 		getchar();

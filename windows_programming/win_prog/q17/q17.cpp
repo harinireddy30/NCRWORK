@@ -5,9 +5,9 @@
 long x;
 DWORD hThreadptr1;
 DWORD hThreadptr2;
-DWORD WINAPI Thread(LPVOID lparam)
+DWORD WINAPI Thread(LPVOID lparam)               //thread function
 {
-	x++;
+	x++;                                         //increments the value of x during thread execution
 	return 1;
 }
 int main()

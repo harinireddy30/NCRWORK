@@ -18,7 +18,7 @@ void _tmain(int argc, TCHAR *argv[], TCHAR *env[])
 	sa.bInheritHandle = TRUE;            //new process inherits the handle
 	HANDLE hFile;
 	TCHAR buffer[BUFFSIZE];
-	hFile = CreateFile(argv[1], GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+	hFile = CreateFile(argv[1], GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);   //to open an existing file
 	if (hFile == INVALID_HANDLE_VALUE)
 	{
 		_tprintf(_T("file doesnot exist Error(%d)\n"), GetLastError());
@@ -32,8 +32,7 @@ void _tmain(int argc, TCHAR *argv[], TCHAR *env[])
 		getchar();
 		return;
 	}
-
-	if (!CreateProcess(NULL, argv[2], NULL, NULL, TRUE, 0, NULL, NULL, &si1, &pi1))
+	if (!CreateProcess(NULL, argv[2], NULL, NULL, TRUE, 0, NULL, NULL, &si1, &pi1))   //creates a process
 	{
 		printf("Create process Error %d", GetLastError());
 		getchar();

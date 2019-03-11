@@ -1,3 +1,5 @@
+/*SHORTHAND NOTATION*/
+
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 int expand(char s1[], char s2[]);
@@ -7,11 +9,13 @@ int main()
 	char s1[20], s2[50];                                //string s1 for input expression and s2 for resultant expression
 	printf("Enter the string in s1:");
 	scanf("%[^\n]s", s1);                              //accepts characters until it encounters space
-	printf("The expression after expansion is:");
 	int x=expand(s1, s2);
-	for (size = 0; size <(x+1); size++)
-		printf("%c", s2[size]);                       //printf the resultant array
-	printf("\n");
+	if (x != 0)
+	{
+		for (size = 0; size < (x + 1); size++)
+			printf("%c", s2[size]);                       //printf the resultant array
+		printf("\n");
+	}
 	system("pause");
 	return 0;
 }
@@ -19,13 +23,13 @@ int expand(char s1[], char s2[])
 {
 	int i, j;
 	i = 0; j = 0;
-	while (i != strlen(s1)) 
+	while (i != strlen(s1))                                  //read characters till null character is encountered      
 	{
 		if (s1[i] == '-')
 		{
 			int initial = s1[i - 1]+1;                      //prints from intial to final value when it encounters '-'
 			int final = s1[i + 1];
-			if (initial <= final)                           //checks if leftside value of'-' is less than rightside value
+			if (final!='-'&&initial <= final)          //checks if the character after '-' is '-' and if leftside value of'-' is less than rightside value
 			{
 				while (initial != final)                    //copy until the final value is reached
 				{
@@ -33,12 +37,13 @@ int expand(char s1[], char s2[])
 					initial++;
 					j++;
 				}
-				s2[j] = initial;
+				s2[j] = initial;                          //to copy the final value
 				i++;
 			}
 			else
 			{
 				printf("Enter a valid sequence\n");             //exception-ask for a valid input
+				return 0;
 				break;
 			}
 		}
@@ -47,5 +52,6 @@ int expand(char s1[], char s2[])
 			s2[j++] = s1[i++];                                  //store the value if '-' is not encountered
 		}
 	}
+	printf("The expression after evaluation is:\n");
 	return (j-1);                                              //return the size of storing array
 }

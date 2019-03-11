@@ -5,12 +5,12 @@
 #include<tchar.h>
 long x;
 DWORD exitcode;
-DWORD WINAPI sec_thread_func(LPVOID lparam)
+DWORD WINAPI sec_thread_func(LPVOID lparam)              //secondary thread function
 {
 	int i;
 	for (i = 0; i < 20; i++)
-		_tprintf("Thread is executing\n");
-	Sleep(3000);
+		_tprintf("Thread is executing\n");               //prints until the thread terminates its execution
+	Sleep(3000);                                         //sleep for 3 seconds 
 	printf("Thread execution completed\n");
 	return 0;
 }
@@ -21,7 +21,7 @@ int main()
 	DWORD exit_code;
 	x = 0;
 	printf("The value in primary thread is:%ld \n", x);
-	hThread = CreateThread(NULL, 0, sec_thread_func, NULL, 0, &threadID);
+	hThread = CreateThread(NULL, 0, sec_thread_func, NULL, 0, &threadID);      //creation of secondary thread function
 	if (hThread == NULL)
 	{
 		printf("Thread not created.Error:(%d)", GetLastError());
@@ -31,7 +31,7 @@ int main()
 	else
 	printf("Secondary thread created successfully\n");
 	WaitForSingleObject(hThread, INFINITE);
-	if (!GetExitCodeThread(hThread, &exit_code))
+	if (!GetExitCodeThread(hThread, &exit_code))                             //returns non-zero value if we get exitcode else returns 0 
 	{
 		_tprintf("Retrieval of exit code failed.Error:(%d)",GetLastError());
 			getchar();
@@ -39,7 +39,7 @@ int main()
 	}
 	else
 	{
-		_tprintf("Exit code is:(%d)",exit_code);
+		_tprintf("Exit code is:(%d)",exit_code);                              //print the exit code if generated
 			ExitThread(exit_code);
 	}
 	CloseHandle(hThread);
