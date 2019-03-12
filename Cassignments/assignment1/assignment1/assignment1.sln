@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nested_loops", "nested_loop
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "invert_p_onwards", "invert_p_onwards\invert_p_onwards.vcxproj", "{E2578042-8CC8-4EC8-9AD3-D2974AA66619}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rotate_p_bits", "rotate_p_bits\rotate_p_bits.vcxproj", "{0812D59B-8746-4A73-B4D0-60FE6548B865}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -131,6 +133,14 @@ Global
 		{E2578042-8CC8-4EC8-9AD3-D2974AA66619}.Release|x64.Build.0 = Release|x64
 		{E2578042-8CC8-4EC8-9AD3-D2974AA66619}.Release|x86.ActiveCfg = Release|Win32
 		{E2578042-8CC8-4EC8-9AD3-D2974AA66619}.Release|x86.Build.0 = Release|Win32
+		{0812D59B-8746-4A73-B4D0-60FE6548B865}.Debug|x64.ActiveCfg = Debug|x64
+		{0812D59B-8746-4A73-B4D0-60FE6548B865}.Debug|x64.Build.0 = Debug|x64
+		{0812D59B-8746-4A73-B4D0-60FE6548B865}.Debug|x86.ActiveCfg = Debug|Win32
+		{0812D59B-8746-4A73-B4D0-60FE6548B865}.Debug|x86.Build.0 = Debug|Win32
+		{0812D59B-8746-4A73-B4D0-60FE6548B865}.Release|x64.ActiveCfg = Release|x64
+		{0812D59B-8746-4A73-B4D0-60FE6548B865}.Release|x64.Build.0 = Release|x64
+		{0812D59B-8746-4A73-B4D0-60FE6548B865}.Release|x86.ActiveCfg = Release|Win32
+		{0812D59B-8746-4A73-B4D0-60FE6548B865}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
