@@ -58,7 +58,7 @@ public://public section
 		emno = 31;
 		salary = 70000.0f;
 	}
-	void displaye()
+	void display()
 	{
 		display();
 		displayp();
@@ -70,7 +70,7 @@ int main()
 {
 	employee obj1;
 	// calling employee display function
-	obj1.displaye();
+	obj1.display();
 	// to stop console from closing
 	system("pause");
 	return 0;

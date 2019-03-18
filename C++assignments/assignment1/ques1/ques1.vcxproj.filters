@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\NCRWORK1\cpp_programming\assignment1\ques1\ques1.cpp">
+    <ClCompile Include="q1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -37,10 +37,22 @@ public:
 			else
 		    	return arr[top--];
 	}
-	/*int size_of_stack()
+	int peek()
 	{
-		return (top + 1);
-	}*/
+		T x = (T)-1;
+		if (!IsEmpty())
+		{
+			x=arr[top --];
+			return x;
+		}
+		else
+			cout << "Stack underflow" << endl;
+	}
+	void setsize(int n)
+	{
+		size = n;
+		arr = new T[n];
+	}
 	void display()
 	{
 		if (top == -1)
@@ -52,25 +64,49 @@ public:
 			cout << endl;
 		}
 	}
+	bool IsEmpty()
+	{
+		return (top == -1);
+	}
+	bool IsFull()
+	{
+		return (top == (size - 1));
+	}
 	~stack()
 	{}
 };
 int main()
 {
-	stack<int> a;
-	a = stack() < int > ;
-	int x;
-	//cout << "size of the stack till now is " << t.size() << endl;
-	//int ans=(t.pop()|-1);
-	a.push(0);
-	a.push(2);
-	x=a.pop();
-	cout << "popped element is:" << x << endl;
-	//cout << "size of the stack till now is " << t.size() << endl;
-	//int temp = t.pop();
-	//cout << "the top of the stack element is " << temp << endl;
-	// to stop console from closing
-	a.display();
-	system("pause");
+	stack<int> s1;
+	int x, op, val;
+	cout << "Enter the size:" << endl;
+	cin >> x;
+	s1.setsize(x);
+	cout << "Enter the operation:1)push 2)pop 3)peek 4)exit" << endl;
+	while (1)
+	{
+		cin >> op;
+		switch (op)
+		{
+		case 1:cout << "Enter the element to push:";
+			cin >> val;
+			s1.push(val);
+			s1.display();
+			break;
+		case 2:val = s1.pop();
+			cout << endl << "Popped element is:" << val << endl;
+			s1.display();
+			break;
+		case 3:val = s1.peek();
+			cout << "Top element is:" << val << endl;
+			s1.display();
+			break;
+		case 4:
+			cout << "Exiting..." << endl;
+			exit(0);
+		default:cout << "Enter a valid option..." << endl;
+			break;
+		}
+	}
 	return 0;
 }
