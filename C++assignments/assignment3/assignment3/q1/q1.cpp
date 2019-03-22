@@ -54,7 +54,7 @@ int linear_search(const char *arr[], int size, char x[20])                //for 
 {
 	for (int i = 0; i < size; i++)
 	{
-		if (strcmp(arr[i], x) == 0)                                      //compares each string pointed by the array with the strin given
+		if (strcmp(arr[i], x) == 0)                                      //compares each string pointed by the array with the string given
 			return i;
 	}
 	return -1;

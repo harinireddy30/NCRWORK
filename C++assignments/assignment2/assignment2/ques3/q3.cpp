@@ -11,7 +11,7 @@ public:
 		cin >> rollno;
 		cin >> salary;
 	}
-	friend ostream& operator<<(ostream &output, employee &e);                              //i/o overloading
+	friend ostream& operator<<(ostream &output, employee &e);                              // i/o overloading
 };
 ostream& operator<<(ostream &output, employee &e)
 {

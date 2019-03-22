@@ -22,6 +22,10 @@ public:
 	complex(float x)
 	{
 		real = img = x;
+		if (!isdigit(x))
+		{
+
+		}
 	}
 	complex(float x, float y)
 	{
@@ -30,26 +34,32 @@ public:
 	}
 	void display()
 	{
-		cout << "real=" << real <<" "<< "img=" << img << endl;
-		if (img >= 0)
-			cout << real << "+" <<"("<< img <<"i"<<")"<< endl;
-		else
-			cout << real << "-" <<"("<< img <<"i"<<")"<< endl;
+		cout << "real=" << real <<" "<< "img=" << img <<endl;
+		if (real == 0)
+		cout << img << "i" << endl;
+		else if (img == 0)
+			cout << real << endl;
+		else if (img > 0)
+			cout << real << "+" << img << "i" << endl;
+		else if (img < 0)
+			cout << real << "-" << -img << "i" << endl;
 	}
 	friend complex add_complex(complex &a, complex &b);   //declaration of friend functions to perform addition n multiplication
 	friend complex mul_complex(complex &a, complex &b);   
 };
 complex add_complex(complex &a, complex &b);
 complex mul_complex(complex &a, complex &b);
-void main()
+int main()
 {
-	float c1_real_img,c2_real, c2_img;
+	float c1_real, c1_img,c2_real, c2_img;
 	complex sumof_c1_c2,mulof_c1_c2;
 	cout << "Enter the parameter to be passed to c1:";
-	cin >> c1_real_img;
-	complex c1(c1_real_img);
+	cin >> c1_real>> c1_img;
+
+	complex c1(c1_real,c1_img);
 	cout << endl<<"Enter real and imaginary values of c2:";
 	cin >> c2_real >> c2_img;
+
 	complex c2(c2_real,c2_img);
 
 	cout <<endl<< "complex c1:";
@@ -64,7 +74,7 @@ void main()
 	cout << "The product of c1 and c2 is :" << endl;
 	mulof_c1_c2.display();
 	system("pause");
-
+	return 0;
 }
 complex add_complex(complex &a, complex &b)
 {

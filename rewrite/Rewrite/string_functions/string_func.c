@@ -72,6 +72,11 @@ int main()
 		int n1, n2;
 		printf("Enter the size of string1 and string2:\n");
 		scanf("%d %d", &n1, &n2);
+		if (n1 > n2)
+		{
+			printf("Size of s2 should be greater than or equal to s1..\n");
+			break;
+		}
 		p1 = (char *)malloc(n1 * sizeof(char));
 		p2 = (char *)malloc(n2 * sizeof(char));
 		if (p1 == NULL || p2 == NULL)

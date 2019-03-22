@@ -53,7 +53,7 @@ void generate_results(student *s, int n)                         //to calculate 
 }
 void main()
 {
-	int x, i, n;
+	int i, n;
 	cout << "Enter the no of students to be displayed:";
 	cin >> n;
 	student *s;                                                        //pointer to student array
@@ -67,5 +67,5 @@ void main()
 	{
 		cout << s[i];                                                  //output details of each student
 	}
-	cin >> x;                                                          //system pause
+	system("pause");
 }

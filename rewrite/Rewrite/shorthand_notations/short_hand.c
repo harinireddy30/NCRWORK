@@ -1,19 +1,20 @@
 /*SHORTHAND NOTATION*/
+/*STRING EXPANSION*/
 
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 int expand(char s1[], char s2[]);
 int main()
 {
-	int size;
-	char s1[20], s2[50];                                //string s1 for input expression and s2 for resultant expression
-	printf("Enter the string in s1:");
-	scanf("%[^\n]s", s1);                              //accepts characters until it encounters space
+	int size, n;
+	char s1[20], s2[20];                                //string s1 for input expression and s2 for resultant expression
+	printf("\n Enter the string in s1:");
+	scanf("%[^\n]s", s1);                              
 	int x=expand(s1, s2);
 	if (x != 0)
 	{
 		for (size = 0; size < (x + 1); size++)
-			printf("%c", s2[size]);                       //printf the resultant array
+			printf("%c", s2[size]);                       //print the resultant array
 		printf("\n");
 	}
 	system("pause");
@@ -27,8 +28,13 @@ int expand(char s1[], char s2[])
 	{
 		if (s1[i] == '-')
 		{
-			int initial = s1[i - 1]+1;                      //prints from intial to final value when it encounters '-'
-			int final = s1[i + 1];
+			if (i==0)                                 //sequence starting with '-'
+			{
+				printf("Sequence can't start with '-' \n");
+				return 0;
+			}
+			char initial = s1[i - 1]+1;                      //prints from intial to final value when it encounters '-'
+			char final = s1[i + 1];
 			if (final!='-'&&initial <= final)          //checks if the character after '-' is '-' and if leftside value of'-' is less than rightside value
 			{
 				while (initial != final)                    //copy until the final value is reached

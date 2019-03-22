@@ -32,7 +32,7 @@ public:
 	{
 			if (top == -1)
 			{
-				cout << "stack overflow"<<endl;
+				cout << "stack underflow"<<endl;
 			}
 			else
 		    	return arr[top--];
@@ -105,6 +105,7 @@ int main()
 			cout << "Exiting..." << endl;
 			exit(0);
 		default:cout << "Enter a valid option..." << endl;
+			exit(0);
 			break;
 		}
 	}
